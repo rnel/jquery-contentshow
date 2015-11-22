@@ -21,7 +21,7 @@ gulp.task('source-js', function() {
 
 gulp.task('source-sass', function() {
   gulp.src('src/sass/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     // non minified version
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream())
@@ -34,7 +34,7 @@ gulp.task('source-sass', function() {
 
 gulp.task('demo-sass', function() {
   gulp.src('src/demo/sass/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(gulp.dest('dist/demo/css'))
     .pipe(browserSync.stream());
 });
