@@ -1,7 +1,83 @@
 
+//* Variables */
+
+// Font variables
+$header-text: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$body-text: 'PT Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+// Font size
+$base-font-size: 16px;
+
+// Breakpoints
+$breakpoint-medium: 641px; // 641px
+$breakpoint-large: 1025px; // 1025px
+
+//* Functions */
+@function em($size, $context: $base-font-size) {
+  $em-size: $size / $context;
+  @return #{$em-size}em;
+}
+
+@function rem($size, $base-size: $base-font-size) {
+  $rem-size: $size / $base-size;
+  @return #{$rem-size}rem;
+}
+
+@function line-height($size, $font-size: $base-font-size) {
+  $lh-size: $size / $font-size;
+  @return #{$lh-size};
+}
+
+
+/* =====================================
+  Fonts
+===================================== */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+
+
+/* =====================================
+  Helpers
+===================================== */
+// Centering Via flexbox
+.centered-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Centering via position and transform translate
+.vertically-centered-position {
+  position: relative;
+
+  > * {
+    position: absolute;
+    top: 50% !important;
+    transform: translateY(-50%);
+  }
+}
+
+html.touch {
+  .hide-on-touch-device {
+    display: none;
+  }
+}
+
+/* =====================================
+  Commons
+===================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 a {
   color: #4183c4;
-  font-size: 14px;
+  font-size: 1em;
   line-height: 1;
   text-decoration: none;
 
@@ -9,3 +85,346 @@ a {
     text-decoration: underline;
   }
 }
+
+.photo-credit {
+  display: block;
+  color: #fff;
+  font-size: em(11px);
+
+  &.top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  &.bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Animations
+===================================== */
+.contentshow-expand-up {
+  transform: translate3d(0, 60%, 0);
+  transition: transform 500ms;
+
+  &.contentshow-animate {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media only screen and (min-width: $breakpoint-medium) {
+  .contentshow-expand-up {
+    transform: translate3d(0, 80%, 0);
+  }
+}
+
+
+/* =====================================
+  Basic Demo
+===================================== */
+
+#basic-demo {
+  background-color: #181818;
+
+  h1, 
+  h2,
+  h3 {
+    color: #fff;
+    font-weight: normal;
+    line-height: 1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    font-family: $header-text;
+  }
+
+  h1 {
+    font-size: em(24px);
+  }
+
+  h2 {
+    font-size: em(20px);
+  }
+
+  h3 {
+    font-size: em(18px);
+    margin-bottom: 0;
+  }
+
+  p {
+    color: #fff;
+    font-family: $body-text;
+    font-size: em(14px);
+  }
+
+  .project-links {
+    width: 170px;
+    margin: 0 auto;
+    color: #bfbfbf;
+    font-size: em(14px);
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-two-columns {
+    width: 100%;
+    overflow: hidden;
+
+    .column {
+      float: left;
+      height: 100vh;
+
+      &:first-child {
+        width: 40%;
+      }
+
+      &:last-child {
+        width: 56%;
+        margin-right: 4%;
+        max-width: 880px;
+      }
+    }
+  }
+
+  .section-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    background-image: url('//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern8.png');
+    background-color: rgba(0, 0, 0, 0.7);
+
+    h2 {
+      margin: 0;
+    }
+
+    .section-title {
+
+    }
+
+    .section-primary-content {
+      max-width: 1440px;
+      transition: opacity 500ms;
+    }
+
+    .section-secondary-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .section-title {
+        font-size: em(24px);
+        line-height: 1.2;
+        text-align: center;
+
+        span {
+          display: block;
+          text-transform: uppercase;
+          font-size: em(12px, 24px);
+        }
+      }
+    }
+
+    &.contentshow-animate {
+      .section-primary-content {
+        opacity: 0;
+      }
+    }
+  }
+
+  .subcontent-image-holder {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &.inside-viewport {
+      img {
+        width: auto;
+        height: 50vmin;
+      }
+    }
+  }
+
+  .contentshow {
+    .contentshow-nav {
+      right: 1%;
+
+      ul {
+        li {
+          .contentshow-nav-item {
+            box-shadow: 1px 2px 10px 0 #484848;
+
+            &.visited {
+              background-color: #888888;
+              border-color: #888888;
+            }
+
+            &.active {
+              background-color: #fff;
+              border-color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    &.current-section-0 {
+      .contentshow-nav {
+        display: none;
+      }
+    }
+  }
+}
+
+#kr-intro {
+  background-image: url('../img/basic/south-korea-intro.jpg');
+  text-align: center;
+
+  h2 {
+    font-size: em(16px);
+    text-transform: uppercase;
+  }
+}
+
+#kr-cities {
+  position: relative;
+  background-image: url('../img/basic/south-korea-cities.jpg');
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern8.png');
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .map-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .kr-map {
+      width: 28vw;
+      height: 250px;
+
+      a {
+        color: #fff !important;
+      }
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .map-marker-detail {
+      width: 32vw;
+
+      p {
+        text-transform: uppercase;
+        font-size: em(12px);
+        margin: 0 0 0.5em;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        box-shadow: 1px 1px 15px 0 #282828;
+      }
+    }
+  }
+}
+
+#kr-seoul {
+  position: relative;
+  background-image: url('../img/basic/seoul-gangnam.jpg');
+}
+
+#kr-busan {
+  position: relative;
+  background-image: url('../img/basic/busan-haedong-yonggungsa.jpg');
+}
+
+
+@media only screen and (min-width: $breakpoint-medium) {
+  #basic-demo {
+    h1 {
+      font-size: em(40px);
+    }
+
+    h2 {
+      font-size: em(34px);
+    }
+
+    h3 {
+      font-size: em(24px);
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: em(16px);
+    }
+
+    .project-links {
+      width: auto;
+    }
+
+    .section-content {
+      h2 {
+        font-size: em(34px);
+      }
+
+      .section-secondary-content {
+        .section-title {
+          font-size: em(36px);
+        }
+      }
+    }
+
+    .subcontent-image-holder {
+      width: 50%;
+    }
+
+  }
+
+  #kr-intro {
+    h2 {
+      font-size: em(24px);
+    }
+  }
+
+  #kr-cities {
+    .map-holder {
+      .kr-map {
+        width: 30vmin;
+        height: 50vmin;
+      }
+
+      .map-marker-detail {
+        width: 30vmin;
+
+        p {
+          font-size: 2vmin;
+        }
+      }
+    }
+  }
+
+}
+

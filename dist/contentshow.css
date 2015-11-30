@@ -22,6 +22,7 @@ body {
   height: 100vh;
   background-position: center center;
   background-size: cover;
+  overflow: hidden;
 }
 
 .contentshow .contentshow-sections-container .contentshow-section .contentshow-grouped-contents {
@@ -29,15 +30,25 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
+.contentshow .contentshow-sections-container .contentshow-section .contentshow-grouped-contents .contentshow-content *:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.contentshow .contentshow-sections-container .contentshow-section .contentshow-grouped-contents .contentshow-content *:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
 .contentshow .contentshow-sections-container .contentshow-section .contentshow-content {
-  padding: 20px;
+  padding: 15px;
 }
 
 .contentshow .contentshow-next-button-holder {
-  width: 100%;
   position: absolute;
   bottom: 0;
-  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .contentshow .contentshow-next-button-holder .contentshow-next-button {
@@ -113,13 +124,13 @@ body {
   border-color: #484848;
 }
 
-/* Default Animation
+/* Default Animations
 ===================================== */
 .contentshow-content.contentshow-slide-up .contentshow-subcontent,
 .contentshow-content.contentshow-slide-up [class^="contentshow-subcontent-"],
 .contentshow-content.contentshow-slide-up [class*=" contentshow-subcontent-"] {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translate3d(0, 100%, 0);
   transition-property: opacity, transform;
   transition-duration: 800ms, 500ms;
   transition-timing-function: ease, ease;
@@ -140,7 +151,7 @@ body {
 .contentshow-content.contentshow-slide-up.contentshow-animate [class^="contentshow-subcontent-"],
 .contentshow-content.contentshow-slide-up.contentshow-animate [class*=" contentshow-subcontent-"] {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  transform: translate3d(0, 0, 0) !important;
 }
 
 .contentshow-content.contentshow-slide-up:first-child .contentshow-subcontent:first-child,
@@ -163,7 +174,7 @@ body {
 
 .contentshow-content.contentshow-slide-left .contentshow-subcontent {
   opacity: 0;
-  transform: translateX(50%);
+  transform: translate3d(50%, 0, 0);
   transition-property: opacity, transform;
   transition-duration: 800ms, 500ms;
   transition-timing-function: ease, ease;
@@ -180,7 +191,7 @@ body {
 
 .contentshow-content.contentshow-slide-left.contentshow-animate .contentshow-subcontent {
   opacity: 1 !important;
-  transform: translateX(0) !important;
+  transform: translate3d(0, 0, 0) !important;
 }
 
 .contentshow-content.contentshow-slide-left:first-child .contentshow-subcontent:first-child, .contentshow-content.contentshow-slide-left.contentshow-animation-delay .contentshow-subcontent:first-child {

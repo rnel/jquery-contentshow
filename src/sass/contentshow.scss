@@ -40,6 +40,7 @@ body {
       height: 100vh;
       background-position: center center;
       background-size: cover;
+      overflow: hidden;
 
       // todo: add the following on mobile
       // height: auto;
@@ -47,19 +48,31 @@ body {
       .contentshow-grouped-contents {
         transition: transform 500ms ease;
         -webkit-backface-visibility: hidden;
+
+        .contentshow-content {
+          *:first-child {
+            padding-top: 0;
+            margin-top: 0;
+          }
+
+          *:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
+        }
       }
 
       .contentshow-content {
-        padding: 20px;
+        padding: 15px;
       }
     }
   }
 
   .contentshow-next-button-holder {
-    width: 100%;
     position: absolute;
     bottom: 0;
-    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
 
     .contentshow-next-button {
       display: block;
@@ -142,7 +155,7 @@ body {
 }
 
 
-/* Default Animation
+/* Default Animations
 ===================================== */
 
 .contentshow-content {
@@ -154,7 +167,7 @@ body {
     [class^="contentshow-subcontent-"],
     [class*=" contentshow-subcontent-"] {
       opacity: 0;
-      transform: translateY(100%);
+      transform: translate3d(0, 100%, 0);
       transition-property: opacity, transform;
       transition-duration: 800ms, 500ms;
       transition-timing-function: ease, ease;
@@ -177,7 +190,7 @@ body {
       [class^="contentshow-subcontent-"],
       [class*=" contentshow-subcontent-"] {
         opacity: 1 !important;
-        transform: translateY(0) !important;
+        transform: translate3d(0, 0, 0) !important;
       }
     }
 
@@ -206,7 +219,7 @@ body {
 
     .contentshow-subcontent {
       opacity: 0;
-      transform: translateX(50%);
+      transform: translate3d(50%, 0, 0);
       transition-property: opacity, transform;
       transition-duration: 800ms, 500ms;
       transition-timing-function: ease, ease;
@@ -225,7 +238,7 @@ body {
     &.contentshow-animate {
       .contentshow-subcontent {
         opacity: 1 !important;
-        transform: translateX(0) !important;
+        transform: translate3d(0, 0, 0) !important;
       }
     }
 

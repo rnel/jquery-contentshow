@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ContentShow Demo - Basic</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="../contentshow.css">
+    <link rel="stylesheet" href="css/demo.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </head>
+
+  <body id="basic-demo">
+    
+    <div class="contentshow">
+
+      <!-- ## Sections container -->
+      <div class="contentshow-sections-container">
+
+        <!-- ## Intro section -->
+        <section id="kr-intro" class="contentshow-section">
+
+          <div class="contentshow-content contentshow-slide-up" data-cs-order="0">
+            <h2 class="contentshow-subcontent">South Korea</h2>
+            <h1 class="contentshow-subcontent">Land of the Morning Calm</h1>
+            <p class="contentshow-subcontent project-links"><a href="http://github.com/rnel/jquery-contentshow" target="_blank">jquery-contentshow demo</a> by <a href="http://twitter.com/ArnelAguinaldo" target="_blank">@arnelaguinaldo</a></p>
+          </div>
+
+        </section>
+        <!-- // Intro section -->
+
+        <!-- ## Cities section -->
+        <section id="kr-cities" class="contentshow-section">
+          <div class="contentshow-content contentshow-slide-up" data-cs-order="0">
+            <h2 class="contentshow-subcontent">South Korea Cities</h2>
+          </div>
+
+          <div class="map-holder">
+            <div class="contentshow-content contentshow-slide-up map-marker-detail" data-cs-order="1" data-map-area="KR-11">
+              <p class="contentshow-subcontent">Seoul</p>
+              <img class="contentshow-subcontent" src="img/basic/seoul-gangnam-sm.jpg" />
+            </div>
+
+            <div id="kr-map" class="kr-map"></div>
+
+            <div class="contentshow-content contentshow-slide-up map-marker-detail" data-cs-order="2" data-map-area="KR-26">
+              <p class="contentshow-subcontent">Busan</p>
+              <img class="contentshow-subcontent" src="img/basic/busan-haedong-yonggungsa-sm.jpg" />
+            </div>
+          </div>
+          
+          <span class="photo-credit bottom-right">Photo Credit: <a href="https://flic.kr/p/92WyXC" target="_blank">H.B. Kang</a></span>
+        </section>
+        <!-- // Cities section -->
+
+        <!-- ## Seoul section -->
+        <section id="kr-seoul" class="contentshow-section">
+          <span class="photo-credit top-right">Photo Credit: <a href="https://flic.kr/p/cEgqvE" target="_blank">Robert Koehler</a></span>
+
+          <div class="contentshow-content contentshow-expand-up section-content" data-cs-order="1">
+            <div class="contentshow-content contentshow-slide-up section-primary-content" data-cs-order="0">
+              <h2 class="contentshow-subcontent">Seoul</h2>
+              <p class="contentshow-subcontent">Officially the Seoul Special City – is the capital and largest metropolis of South Korea, forming the heart of the Seoul Capital Area, which includes the surrounding Incheon metropolis and Gyeonggi province, the world's second largest metropolitan area with over 25.6 million people. <a href="https://en.wikipedia.org/wiki/Seoul" target="_blank">Wikipedia</a></p>
+            </div>
+
+            <div class="section-secondary-content section-two-columns">
+              <div class="contentshow-content contentshow-slide-up centered-content column" data-cs-order="1">
+                <h2 class="contentshow-subcontent section-title"><span>Places to Visit in</span> Seoul</h2>
+              </div>
+
+              <div class="contentshow-grouped-contents column">
+
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="1">
+                  <h3 class="contentshow-subcontent">Changgyeonggung Palace</h3>
+                  <p class="contentshow-subcontent">Changgyeong Palace is a palace located in Seoul, South Korea. Originally the Summer Palace of the Goryeo King, it later became one of the Five Grand Palaces of the Joseon Dynasty. <a href="https://en.wikipedia.org/wiki/Changgyeonggung" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder">
+                    <img src="img/basic/seoul-changgyeonggung.jpg" />
+                    <span class="photo-credit">Photo Credit: <a href="https://flic.kr/p/evvDmY" target="_blank">Robert Koehler</a></span>
+                  </div>
+                </div>
+
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="2">
+                  <h3 class="contentshow-subcontent">National Museum of Korea</h3>
+                  <p class="contentshow-subcontent">The National Museum of Korea is the flagship museum of Korean history and art in South Korea and is the cultural organization that represents Korea. <a href="https://en.wikipedia.org/wiki/National_Museum_of_Korea" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder">
+                    <img src="img/basic/seoul-national-museum.jpg" />
+                    <span class="photo-credit">Photo Credit: <a href="https://flic.kr/p/bFNVzH" target="_blank">Robert Koehler</a></span>
+                  </div>
+                </div>
+
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="3">
+                  <h3 class="contentshow-subcontent">Bukchon Hanok Village</h3>
+                  <p class="contentshow-subcontent">Bukchon Hanok Village is a Korean traditional village with a long history located between Gyeongbok Palace, Changdeok Palace and Jongmyo Royal Shrine.  <a href="https://en.wikipedia.org/wiki/Bukchon_Hanok_Village" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder">
+                    <img src="img/basic/seoul-bukchon-hanok-village.jpg" />
+                    <span class="photo-credit">Photo Credit: <a href="https://flic.kr/p/qSmjui" target="_blank">Republic of Korea</a></span>
+                  </div>
+                </div>
+
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="4">
+                  <h3 class="contentshow-subcontent">N Seoul Tower</h3>
+                  <p class="contentshow-subcontent">The N Seoul Tower, officially the YTN Seoul Tower and commonly known as the Namsan Tower or Seoul Tower, is a communication and observation tower located on Namsan Mountain in central Seoul, South Korea. <a href="https://en.wikipedia.org/wiki/N_Seoul_Tower" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder inside-viewport">
+                    <img src="img/basic/seoul-tower.jpg" />
+                    <span class="photo-credit">Photo Credit: <a href="https://flic.kr/p/bYtf4o" target="_blank">Katie Haugland</a></span>
+                  </div>
+                </div>
+
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="5">
+                  <h3 class="contentshow-subcontent">Namdaemun</h3>
+                  <p class="contentshow-subcontent">Namdaemun, officially known as the Sungnyemun, is one of the Eight Gates in the Fortress Wall of Seoul, South Korea, which surrounded the city in the Joseon dynasty. <a href="https://en.wikipedia.org/wiki/Namdaemun" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder">
+                    <img src="img/basic/seoul-namdaemun.jpg" />
+                    <span class="photo-credit">Photo Credit: <a href="https://flic.kr/p/exG8pR" target="_blank">Robert Koehler</a></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          
+        </section>
+        <!-- // Seoul section -->
+
+        <!-- ## Busan section -->
+        <section id="kr-busan" class="contentshow-section">
+
+          <div class="contentshow-content contentshow-expand-up section-content" data-cs-order="1">
+            <div class="contentshow-content contentshow-slide-up section-primary-content" data-cs-order="0">
+              <h2 class="contentshow-subcontent">Busan</h2>
+              <p class="contentshow-subcontent">Busan is South Korea's second largest city after Seoul, with a population of approximately 3.6 million. The population of the metropolitan area, including the adjacent cities of Gimhae and Yangsan, is approximately 4.6 million. <a href="https://en.wikipedia.org/wiki/Busan" target="_blank">Wikipedia</a></p>
+            </div>
+
+            <div class="section-secondary-content section-two-columns">
+              <div class="contentshow-content contentshow-slide-up centered-content column" data-cs-order="1">
+                <h2 class="contentshow-subcontent section-title"><span>Places to Visit in</span> Busan</h2>
+              </div>
+
+              <div class="contentshow-grouped-contents column">
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="1">
+                  <h3 class="contentshow-subcontent">Haeundae Beach</h3>
+                  <p class="contentshow-subcontent">Haeundae Beach is a beach in Busan, South Korea. Haeundae beach is 40 minutes away from Busan's main railroad station (in the Downtown area), and less than one hour from Gimhae International Airport. <a href="https://en.wikipedia.org/wiki/Haeundae_Beach" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder">
+                    <img src="img/basic/busan-haeundae.jpg" />
+                    <span class="photo-credit">Photo Credit: <a href="https://flic.kr/p/ypNb7x" target="_blank">Daniel Welch</a> via <a href="http://compfight.com" target="_blank">Compfight</a> <a href="https://www.flickr.com/help/general/#147" target="_blank">cc</a></span>
+                  </div>
+                </div>
+
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="2">
+                  <h3 class="contentshow-subcontent">Haedong Yonggungsa</h3>
+                  <p class="contentshow-subcontent">Haedong Yonggung Temple is a Buddhist temple in Gijang-gun, Busan, South Korea. The temple was built in 1376 by the teacher known as Naong during the Goryeo Dynasty. <a href="https://en.wikipedia.org/wiki/Haedong_Yonggungsa" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder">
+                    <img src="img/basic/busan-haedong-yonggungsa.jpg" />
+                  </div>
+                </div>
+
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="3">
+                  <h3 class="contentshow-subcontent">Taejongdae</h3>
+                  <p class="contentshow-subcontent">Taejongdae is a natural park of Busan, South Korea with magnificent cliffs facing the open sea on the southernmost tip of island of Yeongdo-gu. <a href="https://en.wikipedia.org/wiki/Taejongdae" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder">
+                    <img src="img/basic/busan-taejongdae.jpg" />
+                    <span class="photo-credit">Photo Credit: <a href="https://flic.kr/p/anp8z5" target="_blank">Edvenchers</a></span>
+                  </div>
+                </div>
+
+                <div class="contentshow-content contentshow-slide-up" data-cs-order="4">
+                  <h3 class="contentshow-subcontent">Beomeosa</h3>
+                  <p class="contentshow-subcontent">Beomeosa is a head temple of the Jogye Order of Korean Buddhism in Cheongnyong-dong, Geumjeong-gu, Busan, South Korea. Built on the slopes of Geumjeongsan, it is one of the country's most known urban temples. <a href="https://en.wikipedia.org/wiki/Beomeosa" target="_blank">Wikipedia</a></p>
+                  <div class="contentshow-subcontent subcontent-image-holder">
+                    <img src="img/basic/busan-beomeosa.jpg" />
+                    <span class="photo-credit">Photo Credit: <a href="https://flic.kr/p/gReDBP" target="_blank">Fuyuhiko TAKAYA</a></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            
+          </div>
+        </section>
+        <!-- // Busan section -->
+
+        <!-- ## Contentshow project section -->
+        <section class="contentshow-section">
+
+          <div class="contentshow-grouped-contents">
+
+            <div class="contentshow-content contentshow-slide-up" data-cs-order="0">
+              <p class="contentshow-subcontent project-links"><a href="http://github.com/rnel/jquery-contentshow" target="_blank">jQuery Contentshow demo</a> by <a href="http://twitter.com/ArnelAguinaldo" target="_blank">Arnel Aguinaldo</a></p>
+            </div>
+
+          </div>
+
+        </section>
+        <!-- // Contentshow project section -->
+
+      </div>
+      <!-- // Sections container -->
+
+
+      <!-- ## Next button -->
+      <div class="contentshow-next-button-holder">
+        <span class="contentshow-next-button">
+          <span class="arrow-down"></span>
+        </span>
+      </div>
+      <!-- // Next button -->
+
+
+      <!-- ## Nav -->
+      <div class="contentshow-nav">
+
+      </div>
+      <!-- // Nav -->
+
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/ammap.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/maps/js/southKoreaHigh.js"></script>
+    <script src="../contentshow.js"></script>
+    <script>
+
+      AmCharts.themes.none={};
+
+      var map = AmCharts.makeChart( "kr-map", {
+
+        type: "map",
+        dragMap: false,
+        creditsPosition: 'bottom-right',
+
+        areasSettings: {
+          autoZoom: false,
+          rollOverOutlineColor: "#FFFFFF",
+          rollOverOutlineAlpha: 1,
+          rollOverOutlineThickness: 1,
+          selectedColor: "#000000",
+          outlineAlpha: 0.7,
+          outlineColor: "#FFFFFF",
+          outlineThickness: 0.4,
+          color: "#000000"
+        },
+
+        dataProvider: {
+          map: "southKoreaHigh",
+
+          areas: [ {
+            "id":"KR-11",
+            "title":"Seoul",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 2,
+              height: 2,
+              color: '#FF9933'
+            }
+          }, {
+            "id":"KR-26",
+            "title":"Busan",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 2,
+              height: 2,
+              color: '#FF9933'
+            }
+          }, {
+            "id":"KR-27",
+            "title":"Daegu",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-28",
+            "title":"Incheon",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-29",
+            "title":"Gwangju",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-30",
+            "title":"Daejeon",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-31",
+            "title":"Ulsan",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-41",
+            "title":"Gyeonggi",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-42",
+            "title":"Gangwon",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-43",
+            "title":"North Chungcheong",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-44",
+            "title":"South Chungcheong",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-45",
+            "title":"North Jeolla",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-46",
+            "title":"South Jeolla",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-47",
+            "title":"North Gyeongsang",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-48",
+            "title":"South Gyeongsang",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-49",
+            "title":"Jeju",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          }, {
+            "id":"KR-50",
+            "title":"Sejong",
+            "pattern": {
+              "url": "//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern9.png",
+              width: 4,
+              height: 4
+            }
+          } ]
+        },
+        zoomControl: {
+          panControlEnabled: false,
+          zoomControlEnabled: false,
+           homeButtonEnabled:false
+        },
+        "export": {
+          "enabled": true
+        }
+
+      } );
+
+      $(document).ready(function() {
+        var currentMapObject;
+
+        $('.contentshow').contentshow({
+          onContentChange: function(e) {
+            var mapAreaId = e.$content.data('mapArea');
+
+            if (currentMapObject) {
+              map.rollOutMapObject( currentMapObject );
+              currentMapObject = null;
+            }
+
+            if (mapAreaId) {
+              currentMapObject = map.getObjectById(mapAreaId);
+              map.rollOverMapObject( currentMapObject );
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

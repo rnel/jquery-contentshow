@@ -121,12 +121,12 @@
 
         // Set touch events
         this.$contentshow.on('touchstart', function(e){
-          self.startSwipe = e.changedTouches[0].pageY;
+          self.startSwipe = e.originalEvent.changedTouches[0].pageY;
           self.startTime = new Date().getTime();
         });
 
         this.$contentshow.on('touchend touchcancel', function(e){
-          var endSwipe = e.changedTouches[0].pageY,
+          var endSwipe = e.originalEvent.changedTouches[0].pageY,
             distance = Math.abs(endSwipe - self.startSwipe),
             endTime = new Date().getTime(),
             elapseTime = endTime - self.startTime,
@@ -324,25 +324,32 @@
         var viewportHeight = $(document).height(),
           maxViewableHeight = viewportHeight - this.options.startOffset - this.options.endOffset,
           newPosition,
-          contentContainerHeight = 0;
+          contentContainerHeight = 0,
+          positionUnit = (this.options.useViewportUnit ? 'vh' : 'px');
 
         $groupedContentsContainer.find('.' + this.options.contentAnimateClass).each(function() {
           contentContainerHeight += $(this).outerHeight(true);
         });
 
-        if (contentContainerHeight < maxViewableHeight) {
-          newPosition = 50 - (contentContainerHeight / viewportHeight * 100 / 2);
-        }
-        else {
-          newPosition = -((contentContainerHeight - (viewportHeight-this.options.endOffset)) / viewportHeight * 100);
+        if (contentContainerHeight === 0) {
+          newPosition = viewportHeight;
+        } else {
+          if (contentContainerHeight < maxViewableHeight) {
+            newPosition = 50 - (contentContainerHeight / viewportHeight * 100 / 2);
+          }
+          else {
+            newPosition = -((contentContainerHeight - (viewportHeight-this.options.endOffset)) / viewportHeight * 100);
+          }
+
+          if (this.options.useViewportUnit) {
+            newPosition = newPosition;
+          }
+          else {
+            newPosition = (newPosition * (viewportHeight/100));
+          }
         }
 
-        if (this.options.useViewportUnit) {
-          newPosition = newPosition + 'vh';
-        }
-        else {
-          newPosition = (newPosition * (viewportHeight/100)) + 'px';
-        }
+        newPosition += positionUnit;
 
         var transformValue;
         if (Modernizr.csstransforms3d) {
