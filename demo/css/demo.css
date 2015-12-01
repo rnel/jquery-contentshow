@@ -1,0 +1,352 @@
+/* =====================================
+  Fonts
+===================================== */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+/* =====================================
+  Helpers
+===================================== */
+.centered-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertically-centered-position {
+  position: relative;
+}
+
+.vertically-centered-position > * {
+  position: absolute;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+html.touch .hide-on-touch-device {
+  display: none;
+}
+
+/* =====================================
+  Commons
+===================================== */
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: #4183c4;
+  font-size: 1em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.photo-credit {
+  display: block;
+  color: #fff;
+  font-size: 0.6875em;
+}
+
+.photo-credit.top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.photo-credit.bottom-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Animations
+===================================== */
+.contentshow-expand-up {
+  transform: translate3d(0, 60%, 0);
+  transition: transform 500ms;
+}
+
+.contentshow-expand-up.contentshow-animate {
+  transform: translate3d(0, 0, 0);
+}
+
+@media only screen and (min-width: 641px) {
+  .contentshow-expand-up {
+    transform: translate3d(0, 80%, 0);
+  }
+}
+
+/* =====================================
+  Basic Demo
+===================================== */
+#basic-demo {
+  background-color: #181818;
+}
+
+#basic-demo h1,
+#basic-demo h2,
+#basic-demo h3 {
+  color: #fff;
+  font-weight: normal;
+  line-height: 1;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+#basic-demo h1 {
+  font-size: 1.5em;
+}
+
+#basic-demo h2 {
+  font-size: 1.25em;
+}
+
+#basic-demo h3 {
+  font-size: 1.125em;
+  margin-bottom: 0;
+}
+
+#basic-demo p {
+  color: #fff;
+  font-family: "PT Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 0.875em;
+}
+
+#basic-demo .project-links {
+  width: 170px;
+  margin: 0 auto;
+  color: #bfbfbf;
+  font-size: 0.875em;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+#basic-demo .section-two-columns {
+  width: 100%;
+  overflow: hidden;
+}
+
+#basic-demo .section-two-columns .column {
+  float: left;
+  height: 100vh;
+}
+
+#basic-demo .section-two-columns .column:first-child {
+  width: 40%;
+}
+
+#basic-demo .section-two-columns .column:last-child {
+  width: 56%;
+  margin-right: 4%;
+  max-width: 880px;
+}
+
+#basic-demo .section-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  background-image: url("//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern8.png");
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#basic-demo .section-content h2 {
+  margin: 0;
+}
+
+#basic-demo .section-content .section-primary-content {
+  max-width: 1440px;
+  transition: opacity 500ms;
+}
+
+#basic-demo .section-content .section-secondary-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#basic-demo .section-content .section-secondary-content .section-title {
+  font-size: 1.5em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#basic-demo .section-content .section-secondary-content .section-title span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.5em;
+}
+
+#basic-demo .section-content.contentshow-animate .section-primary-content {
+  opacity: 0;
+}
+
+#basic-demo .subcontent-image-holder {
+  width: 100%;
+}
+
+#basic-demo .subcontent-image-holder img {
+  width: 100%;
+  height: auto;
+}
+
+#basic-demo .subcontent-image-holder.inside-viewport img {
+  width: auto;
+  height: 50vmin;
+}
+
+#basic-demo .contentshow .contentshow-nav {
+  right: 1%;
+}
+
+#basic-demo .contentshow .contentshow-nav ul li .contentshow-nav-item {
+  box-shadow: 1px 2px 10px 0 #484848;
+}
+
+#basic-demo .contentshow .contentshow-nav ul li .contentshow-nav-item.visited {
+  background-color: #888888;
+  border-color: #888888;
+}
+
+#basic-demo .contentshow .contentshow-nav ul li .contentshow-nav-item.active {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+#basic-demo .contentshow.current-section-0 .contentshow-nav {
+  display: none;
+}
+
+#kr-intro {
+  background-image: url("../img/basic/south-korea-intro.jpg");
+  text-align: center;
+}
+
+#kr-intro h2 {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+#kr-cities {
+  position: relative;
+  background-image: url("../img/basic/south-korea-cities.jpg");
+}
+
+#kr-cities:before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("//cdnjs.cloudflare.com/ajax/libs/ammaps/3.10.0/patterns/black/pattern8.png");
+}
+
+#kr-cities h2 {
+  text-align: center;
+}
+
+#kr-cities .map-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#kr-cities .map-holder .kr-map {
+  width: 28vw;
+  height: 250px;
+}
+
+#kr-cities .map-holder .kr-map a {
+  color: #fff !important;
+}
+
+#kr-cities .map-holder .kr-map:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#kr-cities .map-holder .map-marker-detail {
+  width: 32vw;
+}
+
+#kr-cities .map-holder .map-marker-detail p {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  margin: 0 0 0.5em;
+}
+
+#kr-cities .map-holder .map-marker-detail img {
+  width: 100%;
+  height: auto;
+  box-shadow: 1px 1px 15px 0 #282828;
+}
+
+#kr-seoul {
+  position: relative;
+  background-image: url("../img/basic/seoul-gangnam.jpg");
+}
+
+#kr-busan {
+  position: relative;
+  background-image: url("../img/basic/busan-haedong-yonggungsa.jpg");
+}
+
+@media only screen and (min-width: 641px) {
+  #basic-demo h1 {
+    font-size: 2.5em;
+  }
+  #basic-demo h2 {
+    font-size: 2.125em;
+  }
+  #basic-demo h3 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  #basic-demo p {
+    font-size: 1em;
+  }
+  #basic-demo .project-links {
+    width: auto;
+  }
+  #basic-demo .section-content h2 {
+    font-size: 2.125em;
+  }
+  #basic-demo .section-content .section-secondary-content .section-title {
+    font-size: 2.25em;
+  }
+  #basic-demo .subcontent-image-holder {
+    width: 50%;
+  }
+  #kr-intro h2 {
+    font-size: 1.5em;
+  }
+  #kr-cities .map-holder .kr-map {
+    width: 30vmin;
+    height: 50vmin;
+  }
+  #kr-cities .map-holder .map-marker-detail {
+    width: 30vmin;
+  }
+  #kr-cities .map-holder .map-marker-detail p {
+    font-size: 2vmin;
+  }
+}
