@@ -6,6 +6,8 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var browserSync = require('browser-sync');
+var del = require('del');
+var runSequence = require('run-sequence');
 
 gulp.task('source-js', function() {
   gulp.src('src/js/*.js')
@@ -51,6 +53,8 @@ gulp.task('html', function() {
     .pipe(browserSync.stream());
 });
 
+gulp.task('clean', del.bind(null, ['dist/*'], {dot: true}));
+
 gulp.task('serve', ['source-js', 'source-sass', 'demo-sass', 'html', 'images'], function() {
   browserSync({
     server: {
@@ -63,3 +67,9 @@ gulp.task('serve', ['source-js', 'source-sass', 'demo-sass', 'html', 'images'], 
   gulp.watch('src/demo/sass/*.scss', ['demo-sass']);
   gulp.watch('src/**/*.html', ['html']);
 });
+
+gulp.task('build', function(cb) {
+  runSequence('clean', ['source-js', 'source-sass', 'demo-sass', 'html', 'images'], cb);
+});
+
+gulp.task('default', ['build']);

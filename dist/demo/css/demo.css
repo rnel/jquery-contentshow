@@ -34,6 +34,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-family: "PT Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
