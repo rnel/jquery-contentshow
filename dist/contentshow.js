@@ -16,6 +16,7 @@
         useViewportUnit: false,
         sectionIndex: 0,
         contentAnimateClass: 'contentshow-animate',
+        scrollableClass: 'scrollable-container',
         onSectionChange: null,
         onContentChange: null,
         swipe: {
@@ -60,7 +61,7 @@
       return highest;
     }
 
-    
+
     function Contentshow( element, options ) {
       this.element = element;
       this.$el = $(element);
@@ -115,8 +116,10 @@
         // Set mousewheel event
         // mousewheel DOMMouseScroll
         $(window).on('wheel', debounce(function(e){
-          var delta = e.originalEvent.deltaY;
-          self.onscroll(delta);
+          if (!$(e.target).is('.'+self.options.scrollableClass) || $(e.target).closest('.'+self.options.scrollableClass).length == 0) {
+            var delta = e.originalEvent.deltaY;
+            self.onscroll(delta);
+          }
         }, this.options.debounceDelay, true));
 
         // Set touch events
@@ -125,16 +128,19 @@
           self.startTime = new Date().getTime();
         });
 
-        this.$contentshow.on('touchend touchcancel', function(e){
-          var endSwipe = e.originalEvent.changedTouches[0].pageY,
-            distance = Math.abs(endSwipe - self.startSwipe),
-            endTime = new Date().getTime(),
-            elapseTime = endTime - self.startTime,
-            delta;
+        this.$contentshow.on('touchend touchcancel', function (e) {
+          if ($(e.target).not('.'+self.options.scrollableClass) || $(e.target).closest('.'+self.options.scrollableClass).length == 0) {
 
-          if (elapseTime <= self.options.swipe.maxDuration && distance >= self.options.swipe.threshold) {
-            delta = self.startSwipe - endSwipe;
-            self.onscroll(delta);
+            var endSwipe = e.originalEvent.changedTouches[0].pageY,
+                distance = Math.abs(endSwipe - self.startSwipe),
+                endTime = new Date().getTime(),
+                elapseTime = endTime - self.startTime,
+                delta;
+
+            if (elapseTime <= self.options.swipe.maxDuration && distance >= self.options.swipe.threshold) {
+              delta = self.startSwipe - endSwipe;
+              self.onscroll(delta);
+            }
           }
         });
 
@@ -163,13 +169,13 @@
 
       onscroll: function(delta) {
         var direction;
-          
+
         // console.log('delta', delta);
 
         if (!this.$currentSection) {
           this.$currentSection = this.$contentshowSections.eq(this.currentSectionIndex);
         }
-        
+
         if (delta < 0) {
           direction = DIRECTION.PREV;
         }
@@ -304,7 +310,7 @@
           if (!this.$nextButton.is(':visible')) {
             this.$nextButton.show();
           }
-          
+
           this.$contentshow.removeClass('last-content');
         }
       },
